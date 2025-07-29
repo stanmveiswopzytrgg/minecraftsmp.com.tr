@@ -32,7 +32,7 @@ export default function Home() {
             href="#"
             className="text-2xl font-extrabold text-green-400"
           >
-            MinecraftSMP
+            MINECRAFTSMP.COM.TR
           </motion.a>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -73,7 +73,7 @@ export default function Home() {
       {/* HERO SECTION - ID ekledik ve arka plan görselini güncelledik */}
       <section
         id="hero"
-        className="flex flex-col items-center justify-center h-screen text-center bg-[url('/minecraft.jpg')] bg-cover bg-center relative pt-16" // Görsel yolu buraya eklendi
+        className="flex flex-col items-center justify-center h-screen text-center bg-[url('./minecraft.jpg')] bg-cover bg-center relative pt-16" // Görsel yolu buraya eklendi
       >
         <div className="absolute inset-0 bg-black/60"></div> {/* Metin okunabilirliği için overlay */}
         <motion.h1
@@ -82,7 +82,7 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="relative z-10 text-5xl md:text-6xl font-extrabold text-green-400 drop-shadow-lg"
         >
-          MinecraftSMP.com.tr
+          MINECRAFTSMP.COM.TR
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
@@ -121,7 +121,7 @@ export default function Home() {
           className="bg-gray-700 rounded-2xl shadow-xl p-8 md:p-12 text-lg leading-relaxed text-gray-200"
         >
           <p className="mb-4">
-            MinecraftSMP.com.tr, oyunculara benzersiz bir Minecraft Survival deneyimi sunmak için kuruldu. Sunucumuz, 1.21 sürümünün tüm yeniliklerini barındırırken, aynı zamanda kendi özel eklentilerimiz ve sistemlerimizle oyun keyfinizi katlıyor.
+            MINECRAFTSMP.COM.TR, oyunculara benzersiz bir Minecraft Survival deneyimi sunmak için kuruldu. Sunucumuz, 1.21 sürümünün tüm yeniliklerini barındırırken, aynı zamanda kendi özel eklentilerimiz ve sistemlerimizle oyun keyfinizi katlıyor.
           </p>
           <p className="mb-4">
             Ekonomi sistemimiz sayesinde ticaret yapabilir, özel eventlerimize katılarak değerli ödüller kazanabilir ve arkadaşlarınızla birlikte devasa yapılar inşa edebilirsiniz. Amacımız, topluluk odaklı, eğlenceli ve adil bir oyun ortamı sağlamaktır.
@@ -159,10 +159,10 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <p className="text-gray-300 font-semibold mb-2">Minecraft Sürümü:</p>
               <p className="bg-gray-800 text-green-400 px-4 py-2 rounded-lg font-mono text-2xl">
-                1.21 (Son Sürüm)
+                1.21
               </p>
               <p className="text-gray-400 mt-2 text-base">
-                Sunucumuz her zaman en güncel sürümle uyumludur.
+                Sunucumuz her türlü 1.21 sürümüyle girebilirsin
               </p>
             </div>
           </div>
@@ -170,10 +170,10 @@ export default function Home() {
             <p className="text-gray-300 font-semibold mb-4 text-xl">Sunucu Durumu:</p>
             {/* Buraya gerçek bir sunucu durumu API'sinden veri çekilebilir */}
             <p className="text-yellow-400 text-2xl animate-pulse">
-              Aktif Oyuncu Sayısı: Yükleniyor...
+              Sunucu Durumu: Kapalı...
             </p>
             <p className="text-gray-400 text-sm mt-2">
-              (Gerçek zamanlı oyuncu sayısı için harici bir API entegrasyonu gerekir)
+              (Her zaman Doğru Olmayabilir!)
             </p>
           </div>
         </motion.div>
@@ -210,8 +210,7 @@ export default function Home() {
           Topluluğumuza Katılın!
         </h2>
         <p className="text-lg text-gray-300 mb-6">
-          En son duyurular, etkinlikler ve sohbetler için WhatsApp ve Discord
-          kanallarımıza katılın.
+          Duyurular için Whatsapp Kanalımıza, Whitelist'e eklenmek için Discord sunucumuza gelebilirsin!
         </p>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -222,7 +221,7 @@ export default function Home() {
         >
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
             <a
-              href="https://chat.whatsapp.com/YOUR_WHATSAPP_CHANNEL_LINK" // Buraya WhatsApp kanal linkinizi ekleyin
+              href="https://whatsapp.com/channel/0029VbBg1vb4inogpliFFu0p" // Buraya WhatsApp kanal linkinizi ekleyin
               target="_blank"
               rel="noopener noreferrer"
               className="w-full md:w-auto px-8 py-4 bg-green-600 rounded-full shadow-lg hover:bg-green-700 hover:scale-105 transition-transform duration-300 text-xl font-semibold flex items-center justify-center"
@@ -240,7 +239,7 @@ export default function Home() {
               WhatsApp Kanalına Katıl
             </a>
             <a
-              href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" // Buraya Discord sunucu linkinizi ekleyin
+              href="https://discord.gg/gnyGDSVabz" // Buraya Discord sunucu linkinizi ekleyin
               target="_blank"
               rel="noopener noreferrer"
               className="w-full md:w-auto px-8 py-4 bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 hover:scale-105 transition-transform duration-300 text-xl font-semibold flex items-center justify-center"
@@ -263,7 +262,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="py-10 text-center text-gray-400 border-t border-gray-700 mt-10">
-        <p>© {new Date().getFullYear()} MinecraftSMP.com.tr | Tüm Hakları Saklıdır.</p>
+        <p>© {new Date().getFullYear()} MINECRAFTSMP.COM.TR | Taslak: ChatGPT Tamamlayan: Gemini AI | Tüm Hakları Saklıdır.</p>
         {/* Discord footer linki kaldırıldı, yukarıdaki yeni bölüm yeterli */}
       </footer>
     </main>
