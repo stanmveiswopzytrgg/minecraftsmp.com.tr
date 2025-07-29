@@ -162,7 +162,7 @@ export default function Home() {
                 1.21
               </p>
               <p className="text-gray-400 mt-2 text-base">
-                Sunucumuz 1.21 üstü sürümlerle uyumludur.
+                Sunucumuz 1.21 sürümünün her varyasyonuyla uyumludur!
               </p>
             </div>
           </div>
@@ -170,7 +170,7 @@ export default function Home() {
             <p className="text-gray-300 font-semibold mb-4 text-xl">Sunucu Durumu:</p>
             {/* Buraya gerçek bir sunucu durumu API'sinden veri çekilebilir */}
             <p className="text-yellow-400 text-2xl animate-pulse">
-              Sunucu Durumu: Açık
+              Sunucu Durumu: Aktif...
             </p>
             <p className="text-gray-400 text-sm mt-2">
               (Her zaman doğru olmayabilir!)
