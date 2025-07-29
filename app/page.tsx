@@ -145,15 +145,17 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-xl">
             <div className="flex flex-col items-center">
               <p className="text-gray-300 font-semibold mb-2">Sunucu IP Adresi:</p>
-              <p className="bg-gray-800 text-green-400 px-4 py-2 rounded-lg font-mono text-2xl break-all">
+              {/* IP adresinin tek satırda kalması için 'whitespace-nowrap' eklendi */}
+              <p className="bg-gray-800 text-green-400 px-4 py-2 rounded-lg font-mono text-2xl break-all whitespace-nowrap">
                 oyna.minecraftsmp.com.tr:25565
               </p>
-              <button
+              <motion.button // motion.button olarak değiştirildi
                 onClick={copyIP}
+                whileHover={{ scale: 1.1 }} // Hover efekti eklendi
                 className="mt-4 px-6 py-2 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition text-lg"
               >
                 {copied ? "Kopyalandı!" : "IP Kopyala"}
-              </button>
+              </motion.button>
             </div>
             <div className="flex flex-col items-center">
               <p className="text-gray-300 font-semibold mb-2">Minecraft Sürümü:</p>
