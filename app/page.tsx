@@ -222,7 +222,7 @@ export default function Home() {
         >
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
             <a
-              href="https://chat.whatsapp.com/YOUR_WHATSAPP_CHANNEL_LINK" // Buraya WhatsApp kanal linkinizi ekleyin
+              href="https://whatsapp.com/channel/0029VbBg1vb4inogpliFFu0p" // Buraya WhatsApp kanal linkinizi ekleyin
               target="_blank"
               rel="noopener noreferrer"
               className="w-full md:w-auto px-8 py-4 bg-green-600 rounded-full shadow-lg hover:bg-green-700 hover:scale-105 transition-transform duration-300 text-xl font-semibold flex items-center justify-center"
@@ -240,7 +240,7 @@ export default function Home() {
               WhatsApp Kanalına Katıl
             </a>
             <a
-              href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" // Buraya Discord sunucu linkinizi ekleyin
+              href="https://discord.gg/gnyGDSVabz" // Buraya Discord sunucu linkinizi ekleyin
               target="_blank"
               rel="noopener noreferrer"
               className="w-full md:w-auto px-8 py-4 bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 hover:scale-105 transition-transform duration-300 text-xl font-semibold flex items-center justify-center"
