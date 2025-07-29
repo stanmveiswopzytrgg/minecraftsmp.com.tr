@@ -32,7 +32,7 @@ export default function Home() {
             href="#"
             className="text-2xl font-extrabold text-green-400"
           >
-            MinecraftSMP
+            MINECRAFTSMP.COM.TR
           </motion.a>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -82,7 +82,7 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="relative z-10 text-5xl md:text-6xl font-extrabold text-green-400 drop-shadow-lg"
         >
-          MinecraftSMP.com.tr
+          MINECRAFTSMP.COM.TR
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
@@ -121,7 +121,7 @@ export default function Home() {
           className="bg-gray-700 rounded-2xl shadow-xl p-8 md:p-12 text-lg leading-relaxed text-gray-200"
         >
           <p className="mb-4">
-            MinecraftSMP.com.tr, oyunculara benzersiz bir Minecraft Survival deneyimi sunmak için kuruldu. Sunucumuz, 1.21 sürümünün tüm yeniliklerini barındırırken, aynı zamanda kendi özel eklentilerimiz ve sistemlerimizle oyun keyfinizi katlıyor.
+            MINECRAFTSMP.COM.TR, oyunculara benzersiz bir Minecraft Survival deneyimi sunmak için kuruldu. Sunucumuz, 1.21 sürümünün tüm yeniliklerini barındırırken, aynı zamanda kendi özel eklentilerimiz ve sistemlerimizle oyun keyfinizi katlıyor.
           </p>
           <p className="mb-4">
             Ekonomi sistemimiz sayesinde ticaret yapabilir, özel eventlerimize katılarak değerli ödüller kazanabilir ve arkadaşlarınızla birlikte devasa yapılar inşa edebilirsiniz. Amacımız, topluluk odaklı, eğlenceli ve adil bir oyun ortamı sağlamaktır.
@@ -159,10 +159,10 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <p className="text-gray-300 font-semibold mb-2">Minecraft Sürümü:</p>
               <p className="bg-gray-800 text-green-400 px-4 py-2 rounded-lg font-mono text-2xl">
-                1.21 (Son Sürüm)
+                1.21
               </p>
               <p className="text-gray-400 mt-2 text-base">
-                Sunucumuz her zaman en güncel sürümle uyumludur.
+                 
               </p>
             </div>
           </div>
@@ -170,10 +170,10 @@ export default function Home() {
             <p className="text-gray-300 font-semibold mb-4 text-xl">Sunucu Durumu:</p>
             {/* Buraya gerçek bir sunucu durumu API'sinden veri çekilebilir */}
             <p className="text-yellow-400 text-2xl animate-pulse">
-              Aktif Oyuncu Sayısı: Yükleniyor...
+              Aktif
             </p>
             <p className="text-gray-400 text-sm mt-2">
-              (Gerçek zamanlı oyuncu sayısı için harici bir API entegrasyonu gerekir)
+              (Her zaman doğru olmayabilir!)
             </p>
           </div>
         </motion.div>
