@@ -1,177 +1,224 @@
-import Image from "next/image"; // Eğer Image bileşeni kullanılıyorsa, bu import satırı kalmalı
+"use client";
+
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react"; // useState ve useEffect hook'larını ekledik
 
 export default function Home() {
+  const [copied, setCopied] = useState(false); // Kopyalama durumu için state
+
+  const copyIP = () => {
+    navigator.clipboard.writeText("oyna.minecraftsmp.com.tr:25565");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // 2 saniye sonra "Kopyalandı!" yazısını kaldır
+  };
+
+  // Sayfada belirli bir ID'ye kaydırmak için fonksiyon
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4">
-      <header className="text-center mb-12">
-        <h1 className="text-5xl md:text-7xl font-bold text-purple-400 mb-4">
-          Hoş Geldiniz
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-300">
-          Uygulamanızın ana sayfası
-        </p>
+    <main className="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen text-white">
+      {/* Navbar (Header) */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm p-4 shadow-lg">
+        <nav className="max-w-7xl mx-auto flex justify-between items-center">
+          <motion.a
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            href="#"
+            className="text-2xl font-extrabold text-green-400"
+          >
+            MinecraftSMP
+          </motion.a>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="space-x-6"
+          >
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-lg hover:text-green-400 transition"
+            >
+              Hakkımızda
+            </button>
+            {/* "Sunucu Bilgileri" ve "Özellikler" yer değiştirdi */}
+            <button
+              onClick={() => scrollToSection("server-info")}
+              className="text-lg hover:text-green-400 transition"
+            >
+              Sunucu Bilgileri
+            </button>
+            <button
+              onClick={() => scrollToSection("features")}
+              className="text-lg hover:text-green-400 transition"
+            >
+              Özellikler
+            </button>
+            {/* Discord seçeneği kaldırıldı, yerine İletişim eklendi */}
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-lg hover:text-green-400 transition"
+            >
+              İletişim
+            </button>
+          </motion.div>
+        </nav>
       </header>
 
-      <main className="flex flex-col items-center justify-center space-y-6">
-        {/* YENİ: Sunucu Bilgileri Bölümü */}
-        <section className="text-center max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-purple-300">
-            Sunucu Bilgileri
-          </h2>
-          <p className="text-lg text-gray-400 leading-relaxed">
-            Sunucumuz hakkında güncel bilgilere buradan ulaşabilirsiniz.
-            Bağlantı adresleri, sürüm bilgileri ve daha fazlası aşağıdadır.
-          </p>
-          <ul className="mt-6 space-y-3 text-left max-w-md mx-auto">
-            <li className="flex items-center text-gray-300">
-              <svg
-                className="w-5 h-5 mr-2 text-blue-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-              IP Adresi: <span className="font-semibold ml-2">oyun.sunucuadi.com</span>
-            </li>
-            <li className="flex items-center text-gray-300">
-              <svg
-                className="w-5 h-5 mr-2 text-blue-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-              Sürüm: <span className="font-semibold ml-2">1.20.4</span>
-            </li>
-            <li className="flex items-center text-gray-300">
-              <svg
-                className="w-5 h-5 mr-2 text-blue-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l3 3a1 1 0 001.414-1.414L11 10.586V6a1 1 0 00-1-1z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-              Çalışma Saatleri: <span className="font-semibold ml-2">7/24 Aktif</span>
-            </li>
-          </ul>
-        </section>
+      {/* HERO SECTION - ID ekledik */}
+      <section
+        id="hero"
+        className="flex flex-col items-center justify-center h-screen text-center bg-[url('/bg-mc.jpg')] bg-cover bg-center relative pt-16" // pt-16 navbar için boşluk
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+        <motion.h1
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-5xl md:text-6xl font-extrabold text-green-400 drop-shadow-lg"
+        >
+          MinecraftSMP.com.tr
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="relative z-10 mt-4 text-xl md:text-2xl"
+        >
+          1.21 Survival & Özel Eventler
+        </motion.p>
+        <motion.button
+          onClick={copyIP}
+          whileHover={{ scale: 1.1 }}
+          className="relative z-10 mt-6 px-8 py-4 bg-green-600 rounded-full shadow-lg hover:bg-green-700 transition text-xl font-semibold"
+        >
+          {copied ? "IP Kopyalandı!" : "Sunucuya Katıl (IP Kopyala)"}
+        </motion.button>
+        <motion.button
+          onClick={() => scrollToSection("about")}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="relative z-10 mt-4 text-gray-300 hover:text-green-400 underline transition"
+        >
+          Daha Fazla Bilgi Edinin
+        </motion.button>
+      </section>
 
-        {/* MEVCUT: Hizmetlerimiz Bölümü (Özellikler olarak algılandı) */}
-        <section className="text-center max-w-2xl mt-12">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-purple-300">
-            Hizmetlerimiz
-          </h2>
-          <p className="text-lg text-gray-400 leading-relaxed">
-            Burada sunduğunuz hizmetler veya uygulamanızın temel özellikleri
-            hakkında kısa ve öz bilgiler verebilirsiniz. Kullanıcıların
-            ilgilerini çekecek ana noktaları vurgulayın.
+      {/* HAKKIMIZDA SECTION - Yeni eklendi ve ID verildi */}
+      <section id="about" className="py-20 max-w-5xl mx-auto px-4 md:px-0">
+        <h2 className="text-4xl font-bold text-center text-green-400 mb-10">Hakkımızda</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-gray-700 rounded-2xl shadow-xl p-8 md:p-12 text-lg leading-relaxed text-gray-200"
+        >
+          <p className="mb-4">
+            MinecraftSMP.com.tr, oyunculara benzersiz bir Minecraft Survival deneyimi sunmak için kuruldu. Sunucumuz, 1.21 sürümünün tüm yeniliklerini barındırırken, aynı zamanda kendi özel eklentilerimiz ve sistemlerimizle oyun keyfinizi katlıyor.
           </p>
-          <ul className="mt-6 space-y-3 text-left max-w-md mx-auto">
-            <li className="flex items-center text-gray-300">
-              <svg
-                className="w-5 h-5 mr-2 text-green-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* DÜZELTİLMİŞ SVG PATH (Onay İşareti) */}
-                <path
-                  fillRule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-              Özellik 1: Harika bir özellik
-            </li>
-            <li className="flex items-center text-gray-300">
-              <svg
-                className="w-5 h-5 mr-2 text-green-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* DÜZELTİLMİŞ SVG PATH (Onay İşareti) */}
-                <path
-                  fillRule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-              Özellik 2: Daha da iyi bir özellik
-            </li>
-            <li className="flex items-center text-gray-300">
-              <svg
-                className="w-5 h-5 mr-2 text-green-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* DÜZELTİLMİŞ SVG PATH (Onay İşareti) */}
-                <path
-                  fillRule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-              Özellik 3: Vazgeçilmez bir özellik
-            </li>
-          </ul>
-        </section>
+          <p className="mb-4">
+            Ekonomi sistemimiz sayesinde ticaret yapabilir, özel eventlerimize katılarak değerli ödüller kazanabilir ve arkadaşlarınızla birlikte devasa yapılar inşa edebilirsiniz. Amacımız, topluluk odaklı, eğlenceli ve adil bir oyun ortamı sağlamaktır.
+          </p>
+          <p>
+            Deneyimli yönetici kadromuz ve aktif Discord topluluğumuz ile her zaman yanınızdayız. Gelin, maceramıza siz de katılın!
+          </p>
+        </motion.div>
+      </section>
 
-        <section className="text-center mt-12">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-purple-300">
-            Bize Katılın
-          </h2>
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full md:w-auto px-8 py-4 bg-purple-600 rounded-full shadow-lg hover:bg-purple-700 transition text-xl font-semibold flex items-center justify-center"
-            >
-              {/* DÜZELTİLMİŞ SVG KODU (Sağa Ok) */}
-              <svg
-                className="w-6 h-6 mr-3"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
+      {/* SUNUCU BİLGİLERİ SECTION - Geliştirildi ve ID verildi */}
+      <section id="server-info" className="py-20 text-center max-w-4xl mx-auto px-4 md:px-0">
+        <h2 className="text-4xl font-bold text-green-400 mb-10">Sunucu Bilgileri</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="bg-gray-700 rounded-2xl shadow-xl p-8 md:p-12"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-xl">
+            <div className="flex flex-col items-center">
+              <p className="text-gray-300 font-semibold mb-2">Sunucu IP Adresi:</p>
+              <p className="bg-gray-800 text-green-400 px-4 py-2 rounded-lg font-mono text-2xl break-all">
+                oyna.minecraftsmp.com.tr:25565
+              </p>
+              <button
+                onClick={copyIP}
+                className="mt-4 px-6 py-2 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition text-lg"
               >
-                <path
-                  fillRule="evenodd"
-                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-              Hemen Başlayın
-            </a>
+                {copied ? "Kopyalandı!" : "IP Kopyala"}
+              </button>
+            </div>
+            <div className="flex flex-col items-center">
+              <p className="text-gray-300 font-semibold mb-2">Minecraft Sürümü:</p>
+              <p className="bg-gray-800 text-green-400 px-4 py-2 rounded-lg font-mono text-2xl">
+                1.21 (Son Sürüm)
+              </p>
+              <p className="text-gray-400 mt-2 text-base">
+                Sunucumuz her zaman en güncel sürümle uyumludur.
+              </p>
+            </div>
+          </div>
+          <div className="mt-8">
+            <p className="text-gray-300 font-semibold mb-4 text-xl">Sunucu Durumu:</p>
+            {/* Buraya gerçek bir sunucu durumu API'sinden veri çekilebilir */}
+            <p className="text-yellow-400 text-2xl animate-pulse">
+              Aktif Oyuncu Sayısı: Yükleniyor...
+            </p>
+            <p className="text-gray-400 text-sm mt-2">
+              (Gerçek zamanlı oyuncu sayısı için harici bir API entegrasyonu gerekir)
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ÖZELLİKLER SECTION - ID eklendi */}
+      <section id="features" className="py-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-4 md:px-0">
+        <h2 className="col-span-1 md:col-span-3 text-4xl font-bold text-center text-green-400 mb-10">Özellikler</h2>
+        {["Gelişmiş Ekonomi Sistemi", "Sık Güncellenen Özel Eventler", "Topluluk Odaklı Survival", "Anti-Hile Koruması", "Aktif Yönetici Ekibi", "Kesintisiz Uptime"].map((feature, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.1 }} // Gecikmeyi azaltarak daha dinamik bir geçiş
+            viewport={{ once: true }}
+            className="p-6 bg-gray-700 rounded-2xl shadow-lg hover:shadow-green-500/50 hover:scale-105 transition-transform duration-300" // Hover efekti eklendi
+          >
+            <h3 className="text-2xl font-bold mb-3 text-green-400">{feature}</h3>
+            <p className="text-gray-300 text-md">
+              {feature === "Gelişmiş Ekonomi Sistemi" && "Oyun içi para birimiyle ticaret yapın ve zenginleşin."}
+              {feature === "Sık Güncellenen Özel Eventler" && "Benzersiz etkinliklerle heyecanlı ödüller kazanın."}
+              {feature === "Topluluk Odaklı Survival" && "Arkadaşlarınızla oynayın, yeni insanlarla tanışın ve devasa yapılar inşa edin."}
+              {feature === "Anti-Hile Koruması" && "Adil ve eğlenceli bir oyun ortamı için güçlü hile koruması."}
+              {feature === "Aktif Yönetici Ekibi" && "Sorularınız ve sorunlarınız için her zaman yanınızdayız."}
+              {feature === "Kesintisiz Uptime" && "Sorunsuz bir oyun deneyimi için yüksek sunucu kararlılığı."}
+            </p>
+          </motion.div>
+        ))}
+      </section>
+
+      {/* İLETİŞİM SECTION - Yeni eklendi ve ID verildi */}
+      <section id="contact" className="py-20 max-w-4xl mx-auto px-4 md:px-0 text-center">
+        <h2 className="text-4xl font-bold text-green-400 mb-10">İletişim</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-gray-700 rounded-2xl shadow-xl p-8 md:p-12 text-lg leading-relaxed text-gray-200"
+        >
+          <p className="mb-4">
+            Her türlü soru, öneri veya sorunlarınız için bizimle iletişime geçmekten çekinmeyin. Size en kısa sürede yardımcı olmaktan mutluluk duyarız.
+          </p>
+          <div className="flex flex-col items-center space-y-4">
             <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full md:w-auto px-8 py-4 border border-purple-600 text-purple-400 rounded-full shadow-lg hover:bg-purple-900 hover:border-purple-700 transition text-xl font-semibold flex items-center justify-center"
-            >
-              Daha Fazla Bilgi
-            </a>
-            {/* YENİ: İletişim Butonu */}
-            <a
-              href="#" // Buraya iletişim sayfanızın veya e-posta adresinizin linkini ekleyebilirsiniz
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:info@minecraftsmp.com.tr" // E-posta adresinizi buraya ekleyin
               className="w-full md:w-auto px-8 py-4 bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 transition text-xl font-semibold flex items-center justify-center"
             >
               <svg
@@ -182,18 +229,36 @@ export default function Home() {
               >
                 <path
                   fillRule="evenodd"
-                  d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.339-3.182A8.964 8.964 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
+                  d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
                   clipRule="evenodd"
                 ></path>
               </svg>
-              İletişim
+              E-posta Gönder
+            </a>
+            <a
+              href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" // Discord sunucu linkinizi buraya ekleyin
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-auto px-8 py-4 bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 transition text-xl font-semibold flex items-center justify-center"
+            >
+              <svg
+                className="w-6 h-6 mr-3"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.78 2.302a.75.75 0 00-.77-.417 17.8 17.8 0 00-3.522-.505 17.746 17.746 0 00-6.976 0 17.8 17.8 0 00-3.522.505.75.75 0 00-.77.417.75.75 0 00-.148.667 19.56 19.56 0 00.598 2.768 19.56 19.56 0 00.598 2.768a.75.75 0 00.148.667.75.75 0 00.77.417 17.8 17.8 0 003.522.505 17.746 17.746 0 006.976 0 17.8 17.8 0 003.522-.505.75.75 0 00.77-.417.75.75 0 00.148-.667 19.56 19.56 0 00-.598-2.768 19.56 19.56 0 00-.598-2.768.75.75 0 00-.148-.667zM7.5 13.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm5 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+                ></path>
+              </svg>
+              Discord Sunucusu
             </a>
           </div>
-        </section>
-      </main>
+        </motion.div>
+      </section>
 
       {/* YENİ: WhatsApp ve Discord Kanallarına Katılım Bölümü */}
-      <section className="mt-16 text-center max-w-2xl p-6 bg-gray-800 rounded-lg shadow-xl">
+      <section className="mt-16 text-center max-w-2xl p-6 bg-gray-800 rounded-lg shadow-xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-green-400">
           Topluluğumuza Katılın!
         </h2>
@@ -241,9 +306,11 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="mt-12 text-gray-500 text-sm text-center">
-        <p>&copy; 2023 Uygulama Adınız. Tüm Hakları Saklıdır.</p>
+      {/* FOOTER */}
+      <footer className="py-10 text-center text-gray-400 border-t border-gray-700 mt-10">
+        <p>© {new Date().getFullYear()} MinecraftSMP.com.tr | Tüm Hakları Saklıdır.</p>
+        {/* Discord footer linki kaldırıldı, yukarıdaki yeni bölüm yeterli */}
       </footer>
-    </div>
+    </main>
   );
 }
