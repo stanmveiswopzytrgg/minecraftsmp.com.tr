@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react"; // useState ve useEffect hook'larını ekledik
+import { useState } from "react"; // useEffect kaldırıldı
 
 export default function Home() {
   const [copied, setCopied] = useState(false); // Kopyalama durumu için state
@@ -215,7 +215,7 @@ export default function Home() {
           Topluluğumuza Katılın!
         </h2>
         <p className="relative z-10 text-lg text-gray-300 mb-6">
-          Duyurular için Whatsapp Kanalımıza, Whitelist'e eklenmek için Discord sunucumuza KATILIN!
+          Duyurular için Whatsapp Kanalımıza, Whitelist&apos;e eklenmek için Discord sunucumuza KATILIN!
         </p>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
