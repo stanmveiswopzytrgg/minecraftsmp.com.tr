@@ -59,12 +59,12 @@ export default function Home() {
             >
               Özellikler
             </button>
-            {/* Discord seçeneği kaldırıldı, yerine Topluluk eklendi */}
+            {/* Discord seçeneği kaldırıldı, yerine Topluluk eklendi (ID ve metin güncellendi) */}
             <button
-              onClick={() => scrollToSection("community")} {/* ID "community" olarak güncellendi */}
+              onClick={() => scrollToSection("community")}
               className="text-lg hover:text-green-400 transition"
             >
-              Topluluk {/* Buton metni "Topluluk" olarak güncellendi */}
+              Topluluk
             </button>
           </motion.div>
         </nav>
