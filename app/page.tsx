@@ -224,7 +224,7 @@ export default function Home() {
               href="https://chat.whatsapp.com/YOUR_WHATSAPP_CHANNEL_LINK" // Buraya WhatsApp kanal linkinizi ekleyin
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full md:w-auto px-8 py-4 bg-green-600 rounded-full shadow-lg hover:bg-green-700 transition text-xl font-semibold flex items-center justify-center"
+              className="w-full md:w-auto px-8 py-4 bg-green-600 rounded-full shadow-lg hover:bg-green-700 hover:scale-105 transition-transform duration-300 text-xl font-semibold flex items-center justify-center" // Hover efekti eklendi
             >
               <svg
                 className="w-6 h-6 mr-3"
@@ -242,7 +242,7 @@ export default function Home() {
               href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" // Buraya Discord sunucu linkinizi ekleyin
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full md:w-auto px-8 py-4 bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 transition text-xl font-semibold flex items-center justify-center"
+              className="w-full md:w-auto px-8 py-4 bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 hover:scale-105 transition-transform duration-300 text-xl font-semibold flex items-center justify-center" // Hover efekti eklendi
             >
               <svg
                 className="w-6 h-6 mr-3"
