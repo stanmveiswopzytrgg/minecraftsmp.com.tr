@@ -59,12 +59,12 @@ export default function Home() {
             >
               Özellikler
             </button>
-            {/* Discord seçeneği kaldırıldı, yerine İletişim eklendi */}
+            {/* Discord seçeneği kaldırıldı, yerine Topluluk eklendi */}
             <button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => scrollToSection("community")} {/* ID "community" olarak güncellendi */}
               className="text-lg hover:text-green-400 transition"
             >
-              İletişim
+              Topluluk {/* Buton metni "Topluluk" olarak güncellendi */}
             </button>
           </motion.div>
         </nav>
@@ -203,62 +203,8 @@ export default function Home() {
         ))}
       </section>
 
-      {/* İLETİŞİM SECTION - Yeni eklendi ve ID verildi */}
-      <section id="contact" className="py-20 max-w-4xl mx-auto px-4 md:px-0 text-center">
-        <h2 className="text-4xl font-bold text-green-400 mb-10">İletişim</h2>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="bg-gray-700 rounded-2xl shadow-xl p-8 md:p-12 text-lg leading-relaxed text-gray-200"
-        >
-          <p className="mb-4">
-            Her türlü soru, öneri veya sorunlarınız için bizimle iletişime geçmekten çekinmeyin. Size en kısa sürede yardımcı olmaktan mutluluk duyarız.
-          </p>
-          <div className="flex flex-col items-center space-y-4">
-            <a
-              href="mailto:info@minecraftsmp.com.tr" // E-posta adresinizi buraya ekleyin
-              className="w-full md:w-auto px-8 py-4 bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 transition text-xl font-semibold flex items-center justify-center"
-            >
-              <svg
-                className="w-6 h-6 mr-3"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-              E-posta Gönder
-            </a>
-            <a
-              href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" // Discord sunucu linkinizi buraya ekleyin
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full md:w-auto px-8 py-4 bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 transition text-xl font-semibold flex items-center justify-center"
-            >
-              <svg
-                className="w-6 h-6 mr-3"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M19.78 2.302a.75.75 0 00-.77-.417 17.8 17.8 0 00-3.522-.505 17.746 17.746 0 00-6.976 0 17.8 17.8 0 00-3.522.505.75.75 0 00-.77.417.75.75 0 00-.148.667 19.56 19.56 0 00.598 2.768 19.56 19.56 0 00.598 2.768a.75.75 0 00.148.667.75.75 0 00.77.417 17.8 17.8 0 003.522.505 17.746 17.746 0 006.976 0 17.8 17.8 0 003.522-.505.75.75 0 00.77-.417.75.75 0 00.148-.667 19.56 19.56 0 00-.598-2.768 19.56 19.56 0 00-.598-2.768.75.75 0 00-.148-.667zM7.5 13.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm5 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                ></path>
-              </svg>
-              Discord Sunucusu
-            </a>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* YENİ: WhatsApp ve Discord Kanallarına Katılım Bölümü */}
-      <section className="mt-16 text-center max-w-2xl p-6 bg-gray-800 rounded-lg shadow-xl mx-auto">
+      {/* YENİ: WhatsApp ve Discord Kanallarına Katılım Bölümü (eski İletişim bölümünün yerine taşındı) */}
+      <section id="community" className="py-20 text-center max-w-4xl mx-auto px-4 md:px-0">
         <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-green-400">
           Topluluğumuza Katılın!
         </h2>
