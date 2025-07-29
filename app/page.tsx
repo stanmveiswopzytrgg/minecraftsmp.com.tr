@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react"; // useEffect tekrar eklendi
+import { useState } from "react"; // useEffect kaldırıldı
 
 export default function Home() {
   const [copied, setCopied] = useState(false); // Kopyalama durumu için state
@@ -70,10 +70,10 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* HERO SECTION - ID ekledik ve arka plan görselini güncelledik */}
+      {/* HERO SECTION - Arka plan görseli ve overlay kaldırıldı */}
       <section
         id="hero"
-        className="flex flex-col items-center justify-center h-screen text-center bg-[url('/minecraft.jpg')] bg-cover bg-center relative pt-16" // Görsel yolu buraya eklendi
+        className="flex flex-col items-center justify-center h-screen text-center bg-[url('/bg-mc.jpg')] bg-cover bg-center relative pt-16" // Orjinal arka plan görseli
       >
         <div className="absolute inset-0 bg-black/60"></div> {/* Metin okunabilirliği için overlay */}
         <motion.h1
@@ -162,7 +162,7 @@ export default function Home() {
                 1.21
               </p>
               <p className="text-gray-400 mt-2 text-base">
-                Sunucumuz her türlü 1.21 sürümüyle girebilirsin
+                Sunucumuz 1.21 üstü sürümlerle uyumludur.
               </p>
             </div>
           </div>
@@ -170,10 +170,10 @@ export default function Home() {
             <p className="text-gray-300 font-semibold mb-4 text-xl">Sunucu Durumu:</p>
             {/* Buraya gerçek bir sunucu durumu API'sinden veri çekilebilir */}
             <p className="text-yellow-400 text-2xl animate-pulse">
-              Sunucu Durumu: Kapalı...
+              Sunucu Durumu: Açık
             </p>
             <p className="text-gray-400 text-sm mt-2">
-              (Her zaman Doğru Olmayabilir!)
+              (Her zaman doğru olmayabilir!)
             </p>
           </div>
         </motion.div>
@@ -210,7 +210,7 @@ export default function Home() {
           Topluluğumuza Katılın!
         </h2>
         <p className="text-lg text-gray-300 mb-6">
-          Duyurular için Whatsapp Kanalımıza, Whitelist'e eklenmek için Discord sunucumuza gelebilirsin!
+          Duyurular için Whatsapp Kanalımıza, Whitelist'e eklenmek için Discord sunucumuza gelebilirsin!
         </p>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -262,7 +262,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="py-10 text-center text-gray-400 border-t border-gray-700 mt-10">
-        <p>© {new Date().getFullYear()} MINECRAFTSMP.COM.TR | Taslak: ChatGPT Tamamlayan: Gemini AI | Tüm Hakları Saklıdır.</p>
+        <p>© {new Date().getFullYear()} MINECRAFTSMP.COM.TR | Taslak: ChatGPT Tamamlayan: Gemini AI | Tüm Hakları Saklıdır.</p>
         {/* Discord footer linki kaldırıldı, yukarıdaki yeni bölüm yeterli */}
       </footer>
     </main>
