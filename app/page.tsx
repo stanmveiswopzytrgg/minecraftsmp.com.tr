@@ -73,7 +73,7 @@ export default function Home() {
       {/* HERO SECTION - ID ekledik ve arka plan görselini güncelledik */}
       <section
         id="hero"
-        className="flex flex-col items-center justify-center h-screen text-center bg-[url('./minecraft.jpg')] bg-cover bg-center relative pt-16" // Görsel yolu buraya eklendi
+        className="flex flex-col items-center justify-center h-screen text-center bg-[url('/minecraft.jpg')] bg-cover bg-center relative pt-16" // Görsel yolu buraya eklendi
       >
         <div className="absolute inset-0 bg-black/60"></div> {/* Metin okunabilirliği için overlay */}
         <motion.h1
