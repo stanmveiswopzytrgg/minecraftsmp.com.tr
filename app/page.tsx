@@ -159,10 +159,10 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <p className="text-gray-300 font-semibold mb-2">Minecraft Sürümü:</p>
               <p className="bg-gray-800 text-green-400 px-4 py-2 rounded-lg font-mono text-2xl">
-                1.21 (Son Sürüm)
+                1.21
               </p>
               <p className="text-gray-400 mt-2 text-base">
-                Sunucumuz sadece 1.21 sürümüyle uyumludur :(
+                Sunucumuz malesef sadece 1.21 ile uyumludur.
               </p>
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="py-10 text-center text-gray-400 border-t border-gray-700 mt-10">
-        <p>© {new Date().getFullYear()} MINECRAFTSMP.COM.TR | Taslak: ChatGPT AI Tamamlayan: Gemini AI | Tüm Hakları Saklıdır.</p>
+        <p>© {new Date().getFullYear()} MINECRAFTSMP.COM.TR | Taslak: ChatGPT Tamamlayan: Gemini AI | Tüm Hakları Saklıdır.</p>
         {/* Discord footer linki kaldırıldı, yukarıdaki yeni bölüm yeterli */}
       </footer>
     </main>
