@@ -212,44 +212,52 @@ export default function Home() {
           En son duyurular, etkinlikler ve sohbetler için WhatsApp ve Discord
           kanallarımıza katılın.
         </p>
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
-          <a
-            href="https://chat.whatsapp.com/YOUR_WHATSAPP_CHANNEL_LINK" // Buraya WhatsApp kanal linkinizi ekleyin
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full md:w-auto px-8 py-4 bg-green-600 rounded-full shadow-lg hover:bg-green-700 transition text-xl font-semibold flex items-center justify-center"
-          >
-            <svg
-              className="w-6 h-6 mr-3"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
+        <motion.div // motion.div ekledik
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-gray-700 rounded-2xl shadow-xl p-8 md:p-12 mt-8" // Arka plan rengi ve yuvarlak köşeler eklendi
+        >
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
+            <a
+              href="https://chat.whatsapp.com/YOUR_WHATSAPP_CHANNEL_LINK" // Buraya WhatsApp kanal linkinizi ekleyin
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-auto px-8 py-4 bg-green-600 rounded-full shadow-lg hover:bg-green-700 transition text-xl font-semibold flex items-center justify-center"
             >
-              <path
-                d="M17.167 2.833A9.95 9.95 0 0010 0C4.477 0 0 4.477 0 10c0 1.77.46 3.43 1.25 4.887l-1.04 3.75a.75.75 0 00.932.932l3.75-1.04A9.95 9.95 0 0010 20c5.523 0 10-4.477 10-10S15.523 2.833 17.167 2.833zM10 18.5a8.5 8.5 0 110-17 8.5 8.5 0 010 17zM14.5 10a.5.5 0 00-.5-.5H11V7a.5.5 0 00-1 0v2.5H7a.5.5 0 000 1h2.5V13a.5.5 0 001 0v-2.5H14a.5.5 0 00.5-.5z"
-              ></path>
-            </svg>
-            WhatsApp Kanalına Katıl
-          </a>
-          <a
-            href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" // Buraya Discord sunucu linkinizi ekleyin
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full md:w-auto px-8 py-4 bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 transition text-xl font-semibold flex items-center justify-center"
-          >
-            <svg
-              className="w-6 h-6 mr-3"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
+              <svg
+                className="w-6 h-6 mr-3"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.167 2.833A9.95 9.95 0 0010 0C4.477 0 0 4.477 0 10c0 1.77.46 3.43 1.25 4.887l-1.04 3.75a.75.75 0 00.932.932l3.75-1.04A9.95 9.95 0 0010 20c5.523 0 10-4.477 10-10S15.523 2.833 17.167 2.833zM10 18.5a8.5 8.5 0 110-17 8.5 8.5 0 010 17zM14.5 10a.5.5 0 00-.5-.5H11V7a.5.5 0 00-1 0v2.5H7a.5.5 0 000 1h2.5V13a.5.5 0 001 0v-2.5H14a.5.5 0 00.5-.5z"
+                ></path>
+              </svg>
+              WhatsApp Kanalına Katıl
+            </a>
+            <a
+              href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" // Buraya Discord sunucu linkinizi ekleyin
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-auto px-8 py-4 bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 transition text-xl font-semibold flex items-center justify-center"
             >
-              <path
-                d="M19.78 2.302a.75.75 0 00-.77-.417 17.8 17.8 0 00-3.522-.505 17.746 17.746 0 00-6.976 0 17.8 17.8 0 00-3.522.505.75.75 0 00-.77.417.75.75 0 00-.148.667 19.56 19.56 0 00.598 2.768 19.56 19.56 0 00.598 2.768a.75.75 0 00.148.667.75.75 0 00.77.417 17.8 17.8 0 003.522.505 17.746 17.746 0 006.976 0 17.8 17.8 0 003.522-.505.75.75 0 00.77-.417.75.75 0 00.148-.667 19.56 19.56 0 00-.598-2.768 19.56 19.56 0 00-.598-2.768.75.75 0 00-.148-.667zM7.5 13.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm5 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-              ></path>
-            </svg>
-            Discord Sunucusuna Katıl
-          </a>
-        </div>
+              <svg
+                className="w-6 h-6 mr-3"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.78 2.302a.75.75 0 00-.77-.417 17.8 17.8 0 00-3.522-.505 17.746 17.746 0 00-6.976 0 17.8 17.8 0 00-3.522.505.75.75 0 00-.77.417.75.75 0 00-.148.667 19.56 19.56 0 00.598 2.768 19.56 19.56 0 00.598 2.768a.75.75 0 00.148.667.75.75 0 00.77.417 17.8 17.8 0 003.522.505 17.746 17.746 0 006.976 0 17.8 17.8 0 003.522-.505.75.75 0 00.77-.417.75.75 0 00.148-.667 19.56 19.56 0 00-.598-2.768 19.56 19.56 0 00-.598-2.768.75.75 0 00-.148-.667zM7.5 13.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm5 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+                ></path>
+              </svg>
+              Discord Sunucusuna Katıl
+            </a>
+          </div>
+        </motion.div>
       </section>
 
       {/* FOOTER */}
