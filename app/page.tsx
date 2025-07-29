@@ -210,8 +210,8 @@ export default function Home() {
           Topluluğumuza Katılın!
         </h2>
         <p className="text-lg text-gray-300 mb-6">
-          En güncel duyurular için Whatsapp kanalımıza,
-          Whitelist'e eklenek için Discord sunucumuza gelebilirsin!
+          En son duyurular, etkinlikler ve whitelist için WhatsApp ve Discord
+	  kanallarımıza katılın.
         </p>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
